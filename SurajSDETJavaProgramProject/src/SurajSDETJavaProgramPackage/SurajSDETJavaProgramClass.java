@@ -4,10 +4,6 @@ import java.util.*;
 
 public class SurajSDETJavaProgramClass {
 
-	public static void main(String[] args) {
-
-	}
-
 	public static void primenumber(int ab) {
 		Boolean Flag = true;
 		for (int i = 3; i <= Math.sqrt(ab); i++) {
@@ -617,4 +613,28 @@ public class SurajSDETJavaProgramClass {
 		System.out.println(word2);
 	}
 
+	public static void makeFirstCharUpperCase() {
+
+		String ab = "i love canada";
+		StringBuilder zz = new StringBuilder();
+		String[] bc = ab.split(" ");
+
+		for (int i = 0; i < bc.length; i++) {
+			char yy = Character.toUpperCase(bc[i].charAt(0));
+			zz.append(yy);
+
+			for (int j = 1; j < bc[i].length(); j++) {
+
+				char ii = bc[i].charAt(j);
+				zz.append(ii);
+			}
+			zz.append(" ");
+		}
+		System.out.println(zz);
+	}
+
+	public static void main(String[] args) {
+		makeFirstCharUpperCase();
+
+	}
 }
