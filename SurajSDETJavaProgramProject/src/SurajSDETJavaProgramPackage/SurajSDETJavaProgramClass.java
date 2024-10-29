@@ -4,6 +4,75 @@ import java.util.*;
 
 public class SurajSDETJavaProgramClass {
 
+	public static void main(String[] args) {
+		longestSquareStreak();
+	
+
+	}
+
+	public static void longestSquareStreak() {
+		int[] ab = {  3, 4, 2, 6,4 ,9,  8, 81 };
+		List<Integer> list = new ArrayList<>();
+		Set<Integer> set = new HashSet<>();
+
+		// Add elements to list and sort it
+		for (int num : ab) {
+			list.add(num);
+		}
+		Collections.sort(list);
+
+		int longestStreak = 0;
+
+		for (int num : list) {
+			int count = 1;
+			int current = num;
+
+			// Check for consecutive squares
+			while (list.contains(current * current)) {
+				current = current * current;
+				count++;
+			}
+
+			// Update longest streak if current streak is longer
+			longestStreak = Math.max(longestStreak, count);
+		}
+
+		System.out.println("Longest Square Streak: " + longestStreak);
+	}
+
+	
+
+	public static void removeDuplicateWordFromString() {
+
+		String ab = "I love love india my india";
+		String[] bc = ab.split(" ");
+		List<String> list = new LinkedList<>();
+
+		for (int i = 0; i < bc.length; i++) {
+
+			if (!list.contains(bc[i])) {
+				list.add(bc[i]);
+			}
+		}
+
+		System.out.println(list);
+
+	}
+
+	public static void sumOfDIgit() {
+
+		String ab = "12345";
+		int sum = 0;
+		System.out.println(ab.charAt(0));
+
+		for (int i = 0; i < ab.length(); i++) {
+			int zz = Character.getNumericValue(ab.charAt(i));
+			sum = sum + zz;
+
+		}
+		System.out.println(sum);
+	}
+
 	public static void primenumber(int ab) {
 		Boolean Flag = true;
 		for (int i = 3; i <= Math.sqrt(ab); i++) {
@@ -633,8 +702,52 @@ public class SurajSDETJavaProgramClass {
 		System.out.println(zz);
 	}
 
-	public static void main(String[] args) {
-		makeFirstCharUpperCase();
+	public static void printOddEven() {
+
+		int a = 9;
+		int b = 6;
+
+		int c = a;
+
+		System.out.println(a % 2 == 0);
+
+		for (int i = 1; i <= b; i++) {
+			if (a % 2 != 0) {
+				System.out.println(a);
+				a = a + 2;
+			}
+
+			if (a % 2 == 0) {
+				System.out.println(a);
+				a = a + 2;
+			}
+		}
+		System.out.println("=====" + "" + c);
+		c = c + 1;
+		System.out.println(c);
+		for (int j = 2; j <= b; j++) {
+			c = c + 2;
+			System.out.println(c);
+
+		}
 
 	}
+
+	public static void eachWordReverse() {
+		String ab = "I love you jann";
+		String[] bc = ab.split(" ");
+		StringBuilder cd = new StringBuilder();
+
+		for (int i = 0; i < bc.length; i++) {
+
+			for (int j = bc[i].length() - 1; j >= 0; j--) {
+
+				cd.append(bc[i].charAt(j));
+
+			}
+			cd.append(" ");
+		}
+		System.out.println(cd.toString());
+	}
+
 }
