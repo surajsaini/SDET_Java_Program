@@ -1,22 +1,43 @@
 package SurajSDETJavaProgramPackage;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CodingQuesSDET {
 
 	public static void main(String[] args) {
-		factor();
+		targetSum();
+	}
+
+	public static void targetSum() {
+
+		int[] ab = { 2, 17, 11, 75, 15, 7 };
+		int b = 0;
+
+		Map<Integer, Integer> map = new HashMap<>();
+
+		for (int a : ab) {
+			map.put(a, b);
+			b++;
+		}
+
+		for (int i = 0; i < ab.length; i++) {
+			if (map.containsKey(9 - ab[i])) {
+				System.out.println(i);
+			}
+
+		}
+
+		
 	}
 
 	public static void factor() {
 
 		int a = 5;
 		int b = 0;
-		int c =a;
+		int c = a;
 
 		for (int i = 1; i < 4; i++) {
-			
+
 			b = a * (c - i);
 			a = b;
 			System.out.println(b);

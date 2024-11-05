@@ -5,13 +5,185 @@ import java.util.*;
 public class SurajSDETJavaProgramClass {
 
 	public static void main(String[] args) {
-		longestSquareStreak();
-	
+		test12();
 
 	}
 
+	public static void test12() {
+
+		int[] arr = { 2, 55, 2, 5, 5, 8};
+
+		Map<Integer, Integer> map = new HashMap<>();
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			if(map.containsValue(10 - arr[i])) {
+				
+				System.out.println( arr[i] + "--"+ (10-arr[i]));
+			}
+			
+			
+				
+				map.put(i,arr[i]);
+			
+		}
+		
+	}
+
+	public static String leetcode3163(String word) {
+
+//		String aa = "aaaaaaaaaaaaasssssdddd";
+		StringBuilder sb = new StringBuilder();
+
+		int count = 0;
+		char chr = word.charAt(0);
+
+		for (int j = 0; j < word.length(); j++) {
+
+			if (word.charAt(j) == chr && count < 9) {
+				count++;
+			}
+
+			else {
+				sb.append(count).append(chr);
+				chr = word.charAt(j);
+				count = 1;
+			}
+
+		}
+		sb.append(count).append(chr);
+		System.out.println(sb);
+		return sb.toString();
+	}
+
+	public static boolean leetcode796(String s, String goal) {
+
+		StringBuilder bb = new StringBuilder(s);
+
+		boolean aa = true;
+		for (int j = 0; j < s.length(); j++) {
+			for (int i = 1; i < s.length(); i++) {
+
+				bb.append(bb.charAt(i));
+			}
+
+			bb.append(bb.charAt(0));
+
+			bb.delete(0, 5);
+
+			if (bb.toString().equals(goal)) {
+
+				aa = true;
+				break;
+			}
+
+			else {
+				aa = false;
+			}
+		}
+
+		System.out.println(aa);
+		return aa;
+
+	}
+
+	public static void tt() {
+		int[] arr = { 4, 6, 12, 7, 15, 22 };
+		int aa = 0;
+		int bb = 1000;
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > aa) {
+
+				aa = arr[i];
+			}
+			if (arr[i] < bb) {
+
+				bb = arr[i];
+			}
+
+		}
+
+		System.out.println(aa + "---" + bb);
+		Arrays.sort(arr);
+
+		System.out.println(arr[0] - arr[arr.length - 1]);
+
+	}
+
+	public static void leetcode(String ll) {
+
+		String[] str = ll.split(" ");
+		boolean ss = true;
+
+		for (int i = 0; i < str.length - 1; i++) {
+
+			if (str[i].charAt(str[i].length() - 1) == str[i + 1].charAt(0)) {
+
+				ss = true;
+			} else {
+				ss = false;
+				break;
+			}
+		}
+		System.out.println(ss);
+
+		if (ss == true) {
+			if (str[0].charAt(0) == str[str.length - 1].charAt((str[str.length - 1]).length() - 1)) {
+				ss = true;
+
+			} else {
+				ss = false;
+			}
+		}
+		System.out.println(ss);
+	}
+
+	public static void leetcode1957() {
+
+		String s = "leeetcode";
+		// Output: "leetcode"
+		int count = 0;
+		StringBuilder aa = new StringBuilder();
+		aa.append(s.charAt(0));
+
+		for (int i = 1; i < s.length(); i++) {
+
+			if (s.charAt(i) == aa.charAt(aa.length() - 1)) {
+
+				count++;
+
+				if (count < 3) {
+					aa.append(s.charAt(i));
+				}
+			} else {
+				aa.append(s.charAt(i));
+				count = 1;
+			}
+		}
+		System.out.println(aa);
+	}
+
+	public static void anagramString() {
+
+		String[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+		System.out.println(strs);
+		Map<String, List<String>> map = new HashMap<>();
+
+		for (String word : strs) {
+			char[] charArray = word.toCharArray();
+			Arrays.sort(charArray);
+			String sortedWord = new String(charArray);
+			if (!map.containsKey(sortedWord)) {
+				map.put(sortedWord, new ArrayList<>());
+			}
+			map.get(sortedWord).add(word);
+		}
+		System.out.println(map.values());
+	}
+
 	public static void longestSquareStreak() {
-		int[] ab = {  3, 4, 2, 6,4 ,9,  8, 81 };
+		int[] ab = { 3, 4, 2, 6, 4, 9, 8, 81 };
 		List<Integer> list = new ArrayList<>();
 		Set<Integer> set = new HashSet<>();
 
@@ -39,8 +211,6 @@ public class SurajSDETJavaProgramClass {
 
 		System.out.println("Longest Square Streak: " + longestStreak);
 	}
-
-	
 
 	public static void removeDuplicateWordFromString() {
 
